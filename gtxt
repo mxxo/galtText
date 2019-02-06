@@ -1,0 +1,20 @@
+#!/usr/bin/perl
+
+# Given a markdown file, replace alt text entries with Ayn Rand quotes
+#
+# Try to replace first using fuzzy string matching, then moving to a random,
+# unique entry if that fails.
+#
+# truths.txt is the quote list
+
+use strict;
+use warnings;
+
+my $truths = "truths.txt";
+open (my $truth_hndl, "<:encoding(UTF-8)", $truths)
+    or die "Couldn't find $truths, the eternal timeless list of truths!\n";
+
+while (my $truth = <$truth_hndl>) {
+    chomp $truth;
+    print "$truth\n";
+}

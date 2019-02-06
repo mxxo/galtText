@@ -6,9 +6,13 @@
 # unique entry if that fails.
 #
 # truths.txt is the quote list
+#
+# Dependencies: String::Approx fuzzy string package
 
 use strict;
 use warnings;
+
+use String::Approx;
 
 my $truths = "truths.txt";
 open (my $truth_hndl, "<:encoding(UTF-8)", $truths)
